@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaCloud</title>
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1305211363248832512/1321781093317218326/logo_canva.png?ex=676e7c12&is=676d2a92&hm=9cca11c905d67b86f15c134c2c5a22454a546653ce6427a05a5aaeb67c569236&">
+    <link rel="stylesheet" href="./media/style.css">
+    <link href="https://fonts.bunny.net/css?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script data-cfasync="false" nonce="04610c7a-ea27-4fec-a8be-a1a969cf9099">try{(function(w,d){!function(a,b,c,d){if(a.zaraz)console.error("zaraz is loaded twice");else{a[c]=a[c]||{};a[c].executed=[];a.zaraz={deferred:[],listeners:[]};a.zaraz._v="5848";a.zaraz._n="04610c7a-ea27-4fec-a8be-a1a969cf9099";a.zaraz.q=[];a.zaraz._f=function(e){return async function(){var f=Array.prototype.slice.call(arguments);a.zaraz.q.push({m:e,a:f})}};for(const g of["track","set","debug"])a.zaraz[g]=a.zaraz._f(g);a.zaraz.init=()=>{var h=b.getElementsByTagName(d)[0],i=b.createElement(d),j=b.getElementsByTagName("title")[0];j&&(a[c].t=b.getElementsByTagName("title")[0].text);a[c].x=Math.random();a[c].w=a.screen.width;a[c].h=a.screen.height;a[c].j=a.innerHeight;a[c].e=a.innerWidth;a[c].l=a.location.href;a[c].r=b.referrer;a[c].k=a.screen.colorDepth;a[c].n=b.characterSet;a[c].o=(new Date).getTimezoneOffset();if(a.dataLayer)for(const k of Object.entries(Object.entries(dataLayer).reduce(((l,m)=>({...l[1],...m[1]})),{})))zaraz.set(k[0],k[1],{scope:"page"});a[c].q=[];for(;a.zaraz.q.length;){const n=a.zaraz.q.shift();a[c].q.push(n)}i.defer=!0;for(const o of[localStorage,sessionStorage])Object.keys(o||{}).filter((q=>q.startsWith("_zaraz_"))).forEach((p=>{try{a[c]["z_"+p.slice(7)]=JSON.parse(o.getItem(p))}catch{a[c]["z_"+p.slice(7)]=o.getItem(p)}}));i.referrerPolicy="origin";i.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(a[c])));h.parentNode.insertBefore(i,h)};["complete","interactive"].includes(b.readyState)?zaraz.init():a.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async bs=>new Promise((bt=>{if(bs){bs.e&&bs.e.forEach((bu=>{try{const bv=d.querySelector("script[nonce]"),bw=bv?.nonce||bv?.getAttribute("nonce"),bx=d.createElement("script");bw&&(bx.nonce=bw);bx.innerHTML=bu;bx.onload=()=>{d.head.removeChild(bx)};d.head.appendChild(bx)}catch(by){console.error(`Error executing script: ${bu}\n`,by)}}));Promise.allSettled((bs.f||[]).map((bz=>fetch(bz[0],bz[1]))))}bt()}));zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>
+
+<style>
+
+:root {
+    --nice-padding: 4.5rem;
+    --roundness: 0.75rem;
+    --accent1: #02db02;
+    --accent2: #0bc1c7;
+    --accent2_transp: #2601f5d2;
+    --background1: #212529;
+    --background2: #16191b;
+
+
+    color-scheme: dark;
+}
+/*#c13636, #4d3009, #18515e, #00d92f, #2209ae, #479f11*/
+.gradient-text {
+    background-image: linear-gradient(to bottom, #FF671F, #FF671F, #ffff, #046A38, #046A38);
+    background-clip: text;
+    color: transparent;
+    font-size: clamp(4rem, 9vw, 6rem); /* Adjust font size based on screen size */
+    word-wrap: break-word; /* Ensure long words break onto the next line */
+    text-align: center; /* Center the text for better appearance */
+    margin-bottom: 0.4rem;
+    margin-top: 0.8rem;
+}
+
+h6 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    
+}
+
+span {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    font-family:'Space Grotesk', sans-serif;
+    background-color: var(--background1);
+    color: white;
+    margin:0px;
+}
+
+
+#more {
+    padding-top:5rem;
+    margin-top: -5rem;
+}
+#discord {
+    padding-top:5rem;
+    margin-top: -5rem;
+}
+#about {
+    padding-top:5rem;
+    margin-top: -5rem;
+}
+#join {
+    padding-top:5rem;
+    margin-top: -5rem;
+}
+
+
+.banner {
+    display: flex;
+    position: fixed;
+    background-color: #64272799;
+    width: 100%;
+    height: 3rem;
+    z-index: 10;
+    font-size: 2rem;
+    font-weight: 600;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    align-content: center;
+    padding-top: .4rem;
+}
+
+
+
+.headline {
+    margin-top: 2rem;
+    color: #fff;
+    font-size:3rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.desktop_navbar {
+    position:fixed;
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom:0;
+    background-color: #1d62cab7;
+    backdrop-filter: blur(15px);
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.desktop_navbar_logo_img {
+    width: 4rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+
+.desktop_navbar_link {
+    font-size: 1.2rem;
+    padding: .8rem;
+    transition: all .5s;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+.desktop_navbar_link:hover {
+    color: var(--accent1);
+}
+
+.desktop_navbar_link2 {
+    padding:.5rem;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+.desktop_navbar_link2_div {
+    font-size: 1.2rem;
+    padding: .8rem;
+    transition: all .5s;
+    margin-left: auto;
+    margin-right: 2rem;
+    font-weight: 700;
+    border: solid 1px var(--accent1);
+    border-radius: var(--roundness);
+    text-align: center;
+}
+.desktop_navbar_link2_div:hover {
+    border: solid 1px var(--accent2);
+    background-color: var(--accent2);
+    transform: scale(1.05)
+}
+
+.mobile_navbar {
+    display: none;
+    overflow: hidden;
+    background-color: #00000033;
+    backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    flex-direction: row;
+    min-height: 53px;
+}
+
+.mobile_navbar_logo_img {
+    position: absolute;
+    display: block;
+    height: 42px;
+    padding-left: .5rem;
+    top: 0;
+    left: 0;
+    padding-top: 3.5px;
+}
+
+.mobile_navbar #mobile_navbar_links {
+    display: none;
+    margin-top: 53px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #00000011;
+}
+
+.mobile_navbar_link {
+    padding:.5rem;
+}
+
+.mobile_navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.mobile_navbar .icon {
+    background-color: #00000044;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 16px;
+}
+
+.mobile_navbar_logo_img_a {
+    display: block;
+    background-color: #159ace22;
+} 
+
+
+
+.mainflex {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main1 {
+    padding-top: calc(var(--nice-padding) + .5rem);
+    padding-bottom: 0rem;
+    display:flex;
+    width: 100%;
+    align-self: center;
+    flex-direction: column;
+    
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: rgba(243, 106, 15, 0.5) url('https://wallpapers-clan.com/wp-content/uploads/2023/10/minecraft-grass-tree-desktop-wallpaper-preview.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.main1_logo_a {
+    /*margin-bottom: 0rem;*/
+    cursor: default;
+}
+
+.main1_logo {
+    display: block;
+    align-self: center;
+    margin-left:auto;
+    margin-right: auto;
+    transition: all .5s;
+    margin-bottom: 1rem;
+}
+.main1_logo:hover {
+    transform: scale(1.05)
+}
+
+.main1_description {
+    text-align: center;
+    font-size:3rem;
+
+    
+    
+}
+
+.main1_actcent {
+    font-weight: 800;
+    color:var(--accent1);
+}
+
+.main1_ipcopier {
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 2rem;
+    background-color: var(--accent2_transp);
+    border: 0px;
+    border-radius: var(--roundness);
+    color: rgb(238, 2, 2);
+    transition: all .5s;
+    cursor:pointer;
+    position: relative;
+}
+
+.main1_ipcopier:hover {
+    background-color: var(--accent2);
+    transform: scale(1.05)
+}
+
+.main1_ipcopier_text1 {
+    font-size:2rem;
+    font-weight: 800;
+}
+
+.main1_ipcopier_text2 {
+    font-size:1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main1_popup {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    text-align: center;
+    background-color: rgb(162, 201, 22);
+    border:solid rgb(24, 127, 175) 1px;
+    color: #fff;
+    border-radius: var(--roundness);
+    z-index: 9999;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: -10.5rem;
+}
+
+.main1_downarrow {
+    opacity: 50%;
+    height: 1.5rem;
+    padding:2rem;
+    transition: all .5s;
+}
+
+.main1_downarrow:hover {
+    opacity: 100%;
+    transform: scale(1.05)
+}
+
+.main2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    padding-bottom: 2rem;
+    background-color: var(--background2);
+    width: 100%;
+}
+
+
+
+.main2_features_div {
+    padding-top: 2rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+.main2_feature {
+    display: flex;
+    background-color: var(--background1);
+    height: 24rem;
+    width: 18rem;
+    margin: 1rem;
+    border-radius: var(--roundness);
+    transition: all .5s;
+    flex-direction: column;
+}
+
+.main2_feature:hover {
+    background-color: #330fd399;
+    transform: scale(1.05)
+}
+
+@media (max-width: 1599px) {
+    .main2_features_div {
+      margin-left: 10rem;
+      margin-right: 10rem;
+    }
+  }
+@media (max-width: 1279px) {
+    .main2_features_div {
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+  }
+
+
+.main2_feature_img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: var(--roundness);
+}
+
+.main2_feature_headline {
+    margin-top: 1rem;
+    text-align: center;
+    font-size:1.5rem;
+    font-weight: 700;
+    margin-top: auto;
+}
+
+.main2_feature_text {
+    margin:1rem;
+    text-align: center;
+    font-size:1.2rem;
+    margin-bottom: auto;
+}
+
+
+.main4 {
+    min-height: 10rem;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main4_dc_widget {
+    border-radius: var(--roundness);
+    border: 0;
+}
+
+.main4_dc_div {
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background2);
+    border-radius: var(--roundness);
+    max-width: 48rem;
+}
+
+.main4_dc_description_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.main4_dc_description_title {
+    margin: 2rem;
+    text-align: center;
+    font-size:1.5rem;
+    font-weight: 700;
+
+}
+
+
+.main4_dc_description {
+    margin-left:1.5rem;
+    margin-right:1.5rem;
+    margin-bottom:1.5rem;
+    font-size:1.2rem;
+}
+.main4_dc_button_a{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border: solid var(--accent1) 1px;
+    border-radius: var(--roundness);
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    transition: all .5s;
+}
+
+.main_button_dash{
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1rem;
+    background-color: var(--accent2_transp);
+    border: 0px;
+    border-radius: var(--roundness);
+    color: white;
+    transition: all .5s;
+    cursor:pointer;
+    position: relative;
+}
+
+.main_button_dash:hover{
+    border: 50px;
+    border-color:rgba(34, 0, 255, 0.1);
+    border-radius: var(--roundness);
+    background-color: var(--accent2);
+    transform: scale(1.05)
+    
+}
+.main4_dc_button_a:hover{
+    border: solid 1px var(--accent2);
+    background-color: var(--accent2);
+    transform: scale(1.05)
+}
+.main4_dc_button {
+    padding:.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.join_button {
+    padding:.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.join_button_a{
+    text-decoration: none;
+    color: rgb(255, 255, 0);
+    text-align: center;
+    border: solid var(--accent1) 1px;
+    border-radius: var(--roundness);
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    transition: all .5s;
+    text-align: center;
+}
+
+.join_button_a:hover{
+    border: solid 1px var(--accent2);
+    /*background-color: #410398;*/
+    transform: scale(1.08)
+
+}
+
+
+.main5 {
+    background-color: var(--background2);
+    min-height: 10rem;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main5_admin_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem .5rem 1rem;
+}
+.main5_admins_div{
+    display: flex;
+    max-width: 46rem;
+    min-height: 18rem;
+    background-color: var(--background1);
+    border-radius: var(--roundness);
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.main5_admins_dev_type1 {
+    flex-direction:row;
+    padding-right: 2rem;
+}
+.main5_admins_dev_type2 {
+    flex-direction: row-reverse;
+    padding-left: 2rem;
+}
+
+.main5_admins_img {
+    border-radius: var(--roundness);
+    max-width: 45%;
+    max-height: 100%;
+    align-self: center;
+}
+.main5_admins_description_div {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    max-width: 60%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main5_admins_description_rank {
+    text-align: center;
+    font-size:3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.main5_admins_description_rank_owner {
+    color: #3498db;
+}
+.main5_admins_description_rank_admin {
+    color: #f82f2f;
+}
+.main5_admins_description_title {
+    text-align: center;
+    font-size:1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: all .5s;
+    margin-bottom: .5rem;
+}
+.main5_admins_description_title:hover {
+    color: var(--accent1);
+    transform: scale(1.05)
+}
+
+.main5_admins_description {
+    margin-bottom: auto;
+    font-size:1.2rem;
+}
+
+
+.main5_supporter_div {
+    display: flex;
+    max-width: 825px;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.main5_supporters_div {
+    width: 23.5rem;
+    min-height: 16rem;
+    background-color: var(--background1);
+    border-radius: var(--roundness);
+    margin: .5rem;
+    display: flex;
+}
+
+.main5_supporters_img {
+    border-radius: var(--roundness);
+    max-width: 25%;
+    max-height: 100%;
+    align-self: center;
+    margin: 1rem;
+}
+.main5_supporters_description_div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 1.5rem 1rem 1rem;
+    flex-direction: column;
+}
+.main5_supporters_description_rank {
+    text-align: center;
+    font-size:1.2rem;
+    font-weight: 700;
+    margin-top:auto;
+}
+.main5_supporters_description_rank_supporter {
+    color: #00f8ff;
+}
+.main5_supporters_description_title {
+    text-align: center;
+    font-size:1.3rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: all .5s;
+    margin-bottom: .5rem;
+}
+.main5_supporters_description_title:hover {
+    color: var(--accent1);
+    transform: scale(1.05)
+}
+
+.main5_supporters_description {
+    font-size:1.2rem;
+    margin-bottom: auto;
+}
+
+
+
+
+
+.main3 {
+    background-color: var(--background1);
+    min-height: 10rem;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.main3_join_div_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    margin: 1rem;
+}
+
+.main3_join_div {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 8rem;
+    background-color: var(--background2);
+    border-radius: var(--roundness);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.main3_join_title {
+    text-align: center;
+    font-size:1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: all .5s;
+    margin-bottom: .5rem;
+}
+
+.main3_join_content_div {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background1);
+    height: 100%;
+    border-radius: var(--roundness);
+    align-items: center;
+    justify-content: center;
+}
+
+.main3_join_categories {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size:1.4rem;
+    line-height: 1.5;
+    border-right: 3px solid var(--background2);
+    padding-right: .75rem;
+}
+.main3_join_values {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size:1.4rem;
+    line-height: 1.5;
+    border-left: 3px solid var(--background2);
+    padding-left: .75rem;
+}
+
+
+
+
+
+
+
+/* Copyright Text */
+
+.copyright {
+    color: #ffffff99;
+    text-decoration: none;
+}
+
+.copyright_div {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    width:auto;
+    background-color: #004e7a;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .desktop_navbar{
+        display:none;
+    }
+    .mobile_navbar{
+        display:flex;
+    }
+    .headline {
+        font-size:1.9rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+    .main1_logo {
+        width: 100%;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .main1_description {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .main1_ipcopier {
+        display: none;
+    }
+    .main5_admins_img {
+        align-self: center;
+        padding-top: 1rem;
+    }
+    .main5_admins_div{
+        flex-direction: column;
+        min-height: 0;
+    }
+    .main5_admins_description_div {
+        max-width: 100%;
+        padding: 2rem;
+    }
+    .main4_dc_div {
+        flex-direction: column;
+    }
+    .main4_dc_widget {
+        height: 20rem;
+        width: 100%;
+    }
+    .main3_join_div {
+        min-width: 20rem;
+        min-height: 9rem;
+    }
+    .main3_join_content_div {
+        padding:1rem;
+    }
+    .main5_admins_dev_type1 {
+        padding-right: 0;
+    }
+    .main5_admins_dev_type2 {
+        padding-left: 0;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .main3_join_categories {
+        font-size:1rem;
+    }
+    .main3_join_values {
+        font-size:1rem;
+    }
+    .main3_join_div {
+        min-width: 10rem;
+        padding: .5rem;
+    }
+    .main3_join_div_div {
+        margin: .25rem;
+    }
+}
+
+</style>
+
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <nav class="desktop_navbar">
+      <a href="https://nexacloud.tech"><img class="desktop_navbar_logo_img" height="64" src="https://cdn.discordapp.com/attachments/1166760652430385221/1321804301336707094/Temp_Logo.jpg?ex=676e91af&is=676d402f&hm=fac7c1578643d35c92cb009865c909cbf77f39c1d2c9a507a772fbd36c5a5e65&" alt="logo"></a>
+      <a href="https://panel.nexacloud.tech" class="desktop_navbar_link">Panel</a>
+      <a href="#discord" class="desktop_navbar_link scroll">Discord</a>
+      <a href="https://discord.gg/UBSYAq6kMD" class="desktop_navbar_link scroll">Paid Plans</a>
+      <a href="#more" class="desktop_navbar_link scroll">Features</a>
+      <div class="desktop_navbar_link2_div">
+          <a href="https://client.nexacloud.tech" class="desktop_navbar_link2 scroll ">Login / Signup</a>
+      </div>
+    </nav>
+    <div class="mobile_navbar">
+      <a href="#" class="mobile_navbar_logo_img_a"><img class="mobile_navbar_logo_img" src="https://hostingkarle.com/logo.png" alt="logo"></a>
+      <div id="mobile_navbar_links">
+          <a class="mobile_navbar_link" onclick="mobile_navbar_link_hider()" href="https://panel.hostingkarle.com">Panel</a>
+          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#discord">Community</a>
+          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#about">Networks who Trust us</a>
+          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="https://store.hostingkarle.com">Paid Plans</a>
+        </div>
+        <div class="icon" onclick="mobile_navbar_link_hider()">
+            <i class="fa fa-bars"></i>
+        </div>
+        <script>
+            function mobile_navbar_link_hider() {
+            var x = document.getElementById("mobile_navbar_links");
+            if (x.style.display === "flex") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "flex";
+            }
+            } 
+        </script>
+    </div>
+    <div class="mainflex">
+      <div class="main1">
+        <a class="main1_logo_a" href="#">
+          <img class="main1_logo" src="https://cdn.discordapp.com/attachments/1166760652430385221/1321804301336707094/Temp_Logo.jpg?ex=676e91af&is=676d402f&hm=fac7c1578643d35c92cb009865c909cbf77f39c1d2c9a507a772fbd36c5a5e65&" alt="logo">
+        </a>
+        <div class="main1_description">
+          <h1 class="gradient-text">NexaCloud</h1>
+          <a class="main1_actcent">Hosting Ka Next Crowd</a><a>!</a>
+          <h6 style="color: #b1b1b1">Proud Indian Company<h6>
+        </div>
+        <div class="main1_ipcopier_div">
+          <button class="main_button_dash" type="button" onclick='location.href="https://client.nexacloud.tech";'>
+            <span class="main1_ipcopier_text1">Claim Your Free 24/7 Server</span>
+            <br>
+            <span class="main1_ipcopier_text2">For FREE! - Click Me!</span>
+          </button>
+        </div>
+        <a href="#more" class="scroll">
+          <img alt="downarrow" class="main1_downarrow" src="https://i.ibb.co/Q6KFYmQ/downarrow.png">
+        </a>
+        <script>
+          const scrollLinks = document.querySelectorAll('.scroll');
+          scrollLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+              event.preventDefault();
+              const target = document.querySelector(link.getAttribute('href'));
+              const offsetTop = target.offsetTop;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
+            });
+          });
+        </script>
+      </div>
+      <div id="more"></div>
+      <div class="main2">
+        <a class="headline">Features/Services</a>
+        <div class="main2_features_div">
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="https://cdn-icons-png.flaticon.com/512/6116/6116895.png">
+            <a class="main2_feature_headline">Free 24/7 Servers</a>
+            <a class="main2_feature_text">We Provide 24/7 Online Server's With 99.99 Uptime </a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="https://th.bing.com/th/id/OIP.7J9Vme3J7SiwU0HVu9Zj0wHaHa?w=188&h=188&c=7&r=0&o=5&pid=1.7">
+            <a class="main2_feature_headline">Many Softwares</a>
+            <a class="main2_feature_text">We provide Many Softwares , Nest , Eggs In Our Hosting. Which You Can Choose!</a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="data:image/jpeg;base64,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">
+            <a class="main2_feature_headline">Trained Staff</a>
+            <a class="main2_feature_text">We Have Well And Trained Staff! We Train our Staff Personally! And Provide 24/7 Support</a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="https://th.bing.com/th/id/OIP.PISuAlZ5-iFwvCcBXNdR7AHaHa?w=174&h=180&c=7&r=0&o=5&pid=1.7">
+            <a class="main2_feature_headline">Events</a>
+            <a class="main2_feature_text">We Host Events In A Week / Month Where The Winners Would Get Prizes / Rewards In Hosting!</a>
+          </div>
+          <div class="main2_feature">
+            <img class="main2_feature_img" alt="Feature Image" src="https://th.bing.com/th/id/OIP.L-T-ekdEd6hjvLiDl7NbIgHaHa?w=164&h=180&c=7&r=0&o=5&pid=1.7">
+            <a class="main2_feature_headline">High Perfomanced Server's</a>
+            <a class="main2_feature_text">We Provide Our Server's With best Performance And Best Ping!</a>
+          </div>
+        </div>
+      </div>
+      <div id="discord"></div>
+      <div class="main4">
+        <a class="headline">Join our Discord</a>
+        <div class="main4_dc_div">
+          <iframe class="main4_dc_widget" src="https://discord.com/widget?id=995176243219677254&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          <div class="main4_dc_description_div">
+            <a class="main4_dc_description_title">Come And Enjoy!</a>
+            <a class="main4_dc_description"> ・Meet New Peoples <br> ・Ask FAQ <br> ・Get Future Updates <br>・Give Reviews  <br>・Win Rewards <br> <br> &amp; more </a>
+            <h6 class="main4_dc_description">Join the server and see your Name appearing here :)</h6>
+            <a href="https://discord.gg/UBSYAq6kMD" class="main4_dc_button_a">
+              <div class="main4_dc_button">Join</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="about"></div>
+      <div class="main5">
+        <a class="headline">Powered By!</a>
+        <div class="main5_admin_div">
+          <div class="main5_admins_div main5_admins_dev_type2">
+            <img class="main5_admins_img" alt="admin member img" src="https://cdn.discordapp.com/attachments/1305211363248832512/1321781093317218326/logo_canva.png?ex=676e7c12&is=676d2a92&hm=9cca11c905d67b86f15c134c2c5a22454a546653ce6427a05a5aaeb67c569236&">
+            <div class="main5_admins_description_div">
+              <a class="main5_admins_description_rank main5_admins_description_rank_owner">Nexa Mc</a>
+              <a href="https://dsc.gg/nexamc" class="join_button_a">
+                <div class="join_button">Join NexaMc</div>
+              </a>
+            </div>
+          </div>
+          <div class="main5_admins_div main5_admins_dev_type1">
+            <img class="main5_admins_img" alt="admin member img" src="https://cdn.discordapp.com/attachments/1293205498828427386/1321782335938756700/image.png?ex=676e7d3a&is=676d2bba&hm=a895176260744699d1b48f9e50a88e817ddf6af1141d89bd16561b72d173d8c6&>"
+            <div class="main5_admins_description_div">
+              <a class="main5_admins_description_rank main5_admins_description_rank_admin">   HostingKarle   </a>
+              <a href="https://hostingkarle.com/discord" class="join_button_a">
+                <div class="join_button">Join HostingKarle</div>
+            
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="buy"></div>
+      <div class="main3">
+        <a class="headline">Want Our Paid Server??</a>
+        
+          <button class="main_button_dash" type="button" onclick='location.href="https://client.nexacloud.tech";'>
+            <span class="main1_ipcopier_text1">Visit Our Store</span>
+            <br>
+            <span>----------------------------------------------------</span>
+            <br>
+            <span class="main1_ipcopier_text2">Servers Starting at Rs 70₹.</span>
+          </button>
+        
+      </div>
+      </div>
+    </div>
+  
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8f8001495ace8fbc","version":"2024.10.5","r":1,"token":"b646031c359a46a4992b5e5f857227a2","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
